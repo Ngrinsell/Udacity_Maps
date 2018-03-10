@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Neighborhood Map Project</title>
+        
+        <!--CSS Reference-->
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body>
+        <div id="content">
+            <div id="header">
+                <div id="headerContent">
+                    <span class="menuButton"><i class="far fa-caret-square-right"></i></span>
+                    <h1>Points of Interest in Lake Mary</h1>
+                </div>
+                
+                <div id="menu">
+                <div id="search">
+                    <!--use keyup then function call to show live results-->
+                    <input id="searchBox" placeholder="Search For a Location" name="query" data-bind="textInput: queryData, event: {keyup: displayResults}"> 
+                </div>
+                <div id="results">
+                    <ul id="list" data-bind="foreach: filteredList"> <!--databind from KO-->
+                        <li class="location" data-bind="click: $parent.windowDisplay"> <!--open window and animate-->
+                            <p data-bind="text: title"></p>
+                        </li> <!--data bind from KO-->
+                    </ul>
+                </div>
+            </div>
+            </div>
+            
+            <div id="map">
+                <p>Uh oh!  Looks like there was an error loading the map!</p>
+            </div>
+        </div>
+    
+        <!--JS Reference-->
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script type='text/javascript' src='http://knockoutjs.com/downloads/knockout-3.4.2.js'></script>
+        <script type='text/javascript' src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+        <script type='text/javascript' src='js/map.js'></script>
+        <script type='text/javascript' src='js/viewModel.js'></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCximVgW73vWTie9DoG_vKOBs6Bwr4Q0kk&callback=initMap&libraries=places" onerror="error()"></script>
+    </body>
+</html>
