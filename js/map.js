@@ -43,7 +43,7 @@ var Place = function(info){
     this.position = info.location;  //from above array
     this.placeID = info.id;
     this.marker = null;             //marker id will be assigned later
-}
+};
 
 //initialize maps
 function initMap() {
@@ -59,7 +59,7 @@ function initMap() {
 
 //function to handle errors
 function error(){
-    alert("Maps has failed to load.  Please try again later.")
+    alert("Maps has failed to load.  Please try again later.");
 }
 
 //menu function
